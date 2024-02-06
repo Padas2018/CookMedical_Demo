@@ -1,0 +1,70 @@
+{
+    "job_class": "PipelineJob",
+    "job_name": "JMS Consumer with ACK Test Pipeline Task",
+    "note": "",
+    "parameters": {
+        "enabled": true,
+        "job_type": "standard",
+        "notification": {
+            "slack_recipients": [
+                {
+                    "channel": [],
+                    "user": []
+                }
+            ]
+        },
+        "num_instances": 1,
+        "pipeline_parameters": {},
+        "pipeline_path": "JMS Consumer with ACK Test Pipeline",
+        "snaplex_path": "PS-Team-Cloud"
+    },
+    "schedule": {
+        "repeat": {
+            "blackout_dates": [],
+            "by": "days",
+            "cron": {
+                "day": "*",
+                "day_of_week": "*",
+                "hour": "*",
+                "minute": "0",
+                "month": "*"
+            },
+            "ends": {
+                "occurrences": null,
+                "when": "never"
+            },
+            "every": 1,
+            "on": {
+                "day": []
+            }
+        },
+        "start_date": "2024-02-06",
+        "start_time": "16:36:30",
+        "time_zone": "US/Pacific"
+    },
+    "trigger": {
+        "repeat": {
+            "blackout_dates": [],
+            "by": "days",
+            "cron": {
+                "day": "*",
+                "day_of_week": "*",
+                "hour": "*",
+                "minute": "0",
+                "month": "*"
+            },
+            "ends": {
+                "occurrences": null,
+                "when": "never"
+            },
+            "every": 1,
+            "on": {
+                "day": []
+            }
+        },
+        "start_date": "2024-02-06",
+        "start_time": "16:36:30",
+        "time_zone": "US/Pacific"
+    },
+    "trigger_type": "ScheduleTrigger"
+}
