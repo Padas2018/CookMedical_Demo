@@ -1,11 +1,14 @@
 {
+    "ai_map": {
+        "footprint": "H4sIAAAAAAAAA8srzckBAE/8yyUEAAAA"
+    },
     "class_id": "com-snaplogic-pipeline",
     "class_version": 9,
     "link_map": {
         "link111": {
-            "dst_id": "11111111-1111-1111-1111-000000000004",
+            "dst_id": "11111111-1111-1111-1111-000000000003",
             "dst_view_id": "input0",
-            "src_id": "11111111-1111-1111-1111-000000000003",
+            "src_id": "11111111-1111-1111-1111-000000000002",
             "src_view_id": "output0"
         },
         "link133": {
@@ -14,13 +17,7 @@
             "src_id": "11111111-1111-1111-1111-000000000000",
             "src_view_id": "output0"
         },
-        "link134": {
-            "dst_id": "11111111-1111-1111-1111-000000000003",
-            "dst_view_id": "input0",
-            "src_id": "11111111-1111-1111-1111-000000000002",
-            "src_view_id": "output0"
-        },
-        "link135": {
+        "link136": {
             "dst_id": "11111111-1111-1111-1111-000000000002",
             "dst_view_id": "input0",
             "src_id": "11111111-1111-1111-1111-000000000001",
@@ -50,7 +47,7 @@
         },
         "input": {},
         "output": {
-            "11111111-1111-1111-1111-000000000004_output101": {
+            "11111111-1111-1111-1111-000000000003_output101": {
                 "label": {
                     "value": "JMS Producer - output0"
                 },
@@ -120,18 +117,6 @@
             "11111111-1111-1111-1111-000000000003": {
                 "error": {},
                 "grid_x_int": 5,
-                "grid_y_int": 1,
-                "index": null,
-                "input": {},
-                "output": {},
-                "recommendation_id": null,
-                "rot_int": 0,
-                "rot_tail_int": 0,
-                "source": "snap catagory"
-            },
-            "11111111-1111-1111-1111-000000000004": {
-                "error": {},
-                "grid_x_int": 6,
                 "grid_y_int": 1,
                 "index": null,
                 "input": {},
@@ -296,65 +281,9 @@
             }
         },
         "11111111-1111-1111-1111-000000000002": {
-            "class_id": "com-snaplogic-snaps-flow-filter",
-            "class_version": 2,
-            "instance_id": "11111111-1111-1111-1111-000000000002",
-            "property_map": {
-                "error": {
-                    "error0": {
-                        "label": {
-                            "value": "error0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    },
-                    "error_behavior": {
-                        "value": "fail"
-                    }
-                },
-                "info": {
-                    "label": {
-                        "value": "Filter"
-                    },
-                    "notes": {}
-                },
-                "input": {
-                    "input0": {
-                        "label": {
-                            "value": "input0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    }
-                },
-                "output": {
-                    "output0": {
-                        "label": {
-                            "value": "output0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    }
-                },
-                "settings": {
-                    "execution_mode": {
-                        "value": "Validate & Execute"
-                    },
-                    "filterExpression": {
-                        "expression": true,
-                        "value": "$message == 'test3'"
-                    }
-                },
-                "view_serial": 100
-            }
-        },
-        "11111111-1111-1111-1111-000000000003": {
             "class_id": "com-snaplogic-snaps-transform-jsonformatter",
             "class_version": 2,
-            "instance_id": "11111111-1111-1111-1111-000000000003",
+            "instance_id": "11111111-1111-1111-1111-000000000002",
             "property_map": {
                 "error": {
                     "error0": {
@@ -440,10 +369,10 @@
                 "view_serial": 100
             }
         },
-        "11111111-1111-1111-1111-000000000004": {
+        "11111111-1111-1111-1111-000000000003": {
             "class_id": "com-snaplogic-snaps-jms-jmsproducer",
             "class_version": 1,
-            "instance_id": "11111111-1111-1111-1111-000000000004",
+            "instance_id": "11111111-1111-1111-1111-000000000003",
             "property_map": {
                 "account": {},
                 "error": {
