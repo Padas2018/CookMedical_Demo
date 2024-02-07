@@ -5,7 +5,7 @@ env:
   URL: https://elastic.snaplogic.com
   ORG: SnapLogic-PS-Team
   PROJECT_SPACE_PROMOTE: CookMedical_QA
-  PROJECT_PROMOTE: CookMedical_Demo
+  PROJECT_PROMOTE: CookMedical_Test
       
 # Controls when the workflow will run
 on:
