@@ -4,7 +4,7 @@ name: SnapLogic CI/CD Demo
 env:
   URL: https://elastic.snaplogic.com
   ORG: SnapLogic-PS-Team
-  PROJECT_SPACE_PROMOTE: CookMedical_QA
+  PROJECT_SPACE_PROMOTE: CookMedical_PRD
   PROJECT_PROMOTE: CookMedical_Test
       
 # Controls when the workflow will run
