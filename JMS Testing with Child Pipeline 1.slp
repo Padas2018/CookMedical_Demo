@@ -1,26 +1,23 @@
 {
-    "ai_map": {
-        "footprint": "H4sIAAAAAAAAA8srzckBAE/8yyUEAAAA"
-    },
     "class_id": "com-snaplogic-pipeline",
     "class_version": 9,
     "link_map": {
-        "link111": {
-            "dst_id": "11111111-1111-1111-1111-000000000003",
-            "dst_view_id": "input0",
-            "src_id": "11111111-1111-1111-1111-000000000002",
-            "src_view_id": "output0"
-        },
-        "link133": {
+        "link101": {
             "dst_id": "11111111-1111-1111-1111-000000000001",
-            "dst_view_id": "input0",
+            "dst_view_id": "input101",
             "src_id": "11111111-1111-1111-1111-000000000000",
             "src_view_id": "output0"
         },
-        "link142": {
+        "link105": {
             "dst_id": "11111111-1111-1111-1111-000000000002",
             "dst_view_id": "input0",
             "src_id": "11111111-1111-1111-1111-000000000001",
+            "src_view_id": "output0"
+        },
+        "link108": {
+            "dst_id": "11111111-1111-1111-1111-000000000003",
+            "dst_view_id": "input0",
+            "src_id": "11111111-1111-1111-1111-000000000002",
             "src_view_id": "output0"
         }
     },
@@ -45,11 +42,20 @@
                 "value": null
             }
         },
-        "input": {},
+        "input": {
+            "11111111-1111-1111-1111-000000000000_input101": {
+                "label": {
+                    "value": "Mapper - input0"
+                },
+                "view_type": {
+                    "value": "document"
+                }
+            }
+        },
         "output": {
             "11111111-1111-1111-1111-000000000003_output101": {
                 "label": {
-                    "value": "JMS Producer - output0"
+                    "value": "S3 File Writer1 - output0"
                 },
                 "view_type": {
                     "value": "document"
@@ -58,17 +64,48 @@
         },
         "settings": {
             "error_param_table": {
-                "value": []
+                "value": [
+                    {
+                        "key": {
+                            "value": "pipe_json_str"
+                        },
+                        "value": {
+                            "expression": true,
+                            "value": "JSON.stringify(pipe)"
+                        }
+                    }
+                ]
             },
             "error_pipeline": {
                 "expression": false,
-                "value": null
+                "value": "../shared/Error Handler"
             },
             "imports": {
                 "value": []
             },
             "param_table": {
-                "value": []
+                "value": [
+                    {
+                        "capture": {
+                            "value": false
+                        },
+                        "data_type": {
+                            "value": "string"
+                        },
+                        "description": {
+                            "value": null
+                        },
+                        "key": {
+                            "value": "JMSMessageId"
+                        },
+                        "required": {
+                            "value": false
+                        },
+                        "value": {
+                            "value": "xxxxx"
+                        }
+                    }
+                ]
             },
             "suspendable": {
                 "value": false
@@ -80,8 +117,8 @@
         "detail_map": {
             "11111111-1111-1111-1111-000000000000": {
                 "error": {},
-                "grid_x_int": 4,
-                "grid_y_int": 2,
+                "grid_x_int": 2,
+                "grid_y_int": 1,
                 "index": null,
                 "input": {},
                 "output": {},
@@ -92,20 +129,20 @@
             },
             "11111111-1111-1111-1111-000000000001": {
                 "error": {},
-                "grid_x_int": 5,
-                "grid_y_int": 2,
+                "grid_x_int": 3,
+                "grid_y_int": 1,
                 "index": null,
                 "input": {},
                 "output": {},
                 "recommendation_id": null,
                 "rot_int": 0,
                 "rot_tail_int": 0,
-                "source": "snap catagory"
+                "source": ""
             },
             "11111111-1111-1111-1111-000000000002": {
                 "error": {},
-                "grid_x_int": 6,
-                "grid_y_int": 2,
+                "grid_x_int": 4,
+                "grid_y_int": 1,
                 "index": null,
                 "input": {},
                 "output": {},
@@ -116,8 +153,8 @@
             },
             "11111111-1111-1111-1111-000000000003": {
                 "error": {},
-                "grid_x_int": 7,
-                "grid_y_int": 2,
+                "grid_x_int": 5,
+                "grid_y_int": 1,
                 "index": null,
                 "input": {},
                 "output": {},
@@ -133,68 +170,9 @@
     },
     "snap_map": {
         "11111111-1111-1111-1111-000000000000": {
-            "class_id": "com-snaplogic-snaps-transform-sequence",
-            "class_version": 1,
-            "instance_id": "11111111-1111-1111-1111-000000000000",
-            "property_map": {
-                "error": {
-                    "error0": {
-                        "label": {
-                            "value": "error0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    },
-                    "error_behavior": {
-                        "value": "fail"
-                    }
-                },
-                "info": {
-                    "label": {
-                        "value": "Sequence"
-                    },
-                    "notes": {
-                        "value": null
-                    }
-                },
-                "output": {
-                    "output0": {
-                        "label": {
-                            "value": "output0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    }
-                },
-                "settings": {
-                    "execution_mode": {
-                        "value": "Validate & Execute"
-                    },
-                    "initialValueProp": {
-                        "expression": false,
-                        "value": 1
-                    },
-                    "numberOfDocumentsProp": {
-                        "expression": false,
-                        "value": 5
-                    },
-                    "passThroughProp": {
-                        "value": false
-                    },
-                    "stepValueProp": {
-                        "expression": false,
-                        "value": 1
-                    }
-                },
-                "view_serial": 100
-            }
-        },
-        "11111111-1111-1111-1111-000000000001": {
             "class_id": "com-snaplogic-snaps-transform-datatransform",
             "class_version": 4,
-            "instance_id": "11111111-1111-1111-1111-000000000001",
+            "instance_id": "11111111-1111-1111-1111-000000000000",
             "property_map": {
                 "error": {
                     "error0": {
@@ -218,7 +196,7 @@
                     }
                 },
                 "input": {
-                    "input0": {
+                    "input101": {
                         "label": {
                             "value": "input0"
                         },
@@ -257,19 +235,19 @@
                                     {
                                         "expression": {
                                             "expression": true,
-                                            "value": "'test'+$value"
+                                            "value": "1"
                                         },
                                         "targetPath": {
-                                            "value": "$message"
+                                            "value": "$dummy"
                                         }
                                     },
                                     {
                                         "expression": {
                                             "expression": true,
-                                            "value": "$value.toString()"
+                                            "value": "_JMSMessageId"
                                         },
                                         "targetPath": {
-                                            "value": "$Id"
+                                            "value": "$JMSMessageId"
                                         }
                                     }
                                 ]
@@ -277,7 +255,74 @@
                         }
                     }
                 },
-                "view_serial": 100
+                "view_serial": 101
+            }
+        },
+        "11111111-1111-1111-1111-000000000001": {
+            "class_id": "com-snaplogic-snaps-script-script",
+            "class_version": 2,
+            "instance_id": "11111111-1111-1111-1111-000000000001",
+            "property_map": {
+                "error": {
+                    "error0": {
+                        "label": {
+                            "value": "error0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    },
+                    "error_behavior": {
+                        "value": "fail"
+                    }
+                },
+                "info": {
+                    "label": {
+                        "value": "Script to delay API call"
+                    },
+                    "notes": {
+                        "value": null
+                    }
+                },
+                "input": {
+                    "input101": {
+                        "label": {
+                            "value": "input0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "output": {
+                    "output0": {
+                        "label": {
+                            "value": "output0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "settings": {
+                    "editable_content": {
+                        "value": "# Import the interface required by the Script snap.\nfrom com.snaplogic.scripting.language import ScriptHook\nimport time\n\nclass TransformScript(ScriptHook):\n   def __init__(self, input, output, error, log):\n       self.input = input\n       self.output = output\n       self.error = error\n       self.log = log\n\n   # The \"execute()\" method is called once when the pipeline is started\n   # and allowed to process its inputs or just send data to its outputs.\n   def execute(self):\n       self.log.info(\"Executing Transform script\")\n       while self.input.hasNext():\n           # Read the next document, wrap it in a map and write out the wrapper\n           in_doc = self.input.next()\n           time.sleep(10)\n           self.output.write(in_doc)\n       self.log.info(\"Finished executing the Transform script\")\n\n# The Script Snap will look for a ScriptHook object in the \"hook\"\n# variable.  The snap will then call the hook's \"execute\" method.\nhook = TransformScript(input, output, error, log)"
+                    },
+                    "executable_during_suggest": {
+                        "value": true
+                    },
+                    "execution_mode": {
+                        "value": "Validate & Execute"
+                    },
+                    "language": {
+                        "value": "Python"
+                    },
+                    "script": {
+                        "expression": false,
+                        "value": null
+                    }
+                },
+                "view_serial": 101
             }
         },
         "11111111-1111-1111-1111-000000000002": {
@@ -337,17 +382,17 @@
                         "value": "Validate & Execute"
                     },
                     "formatSingleDocument": {
-                        "value": true
+                        "value": false
                     },
                     "header": {
                         "value": [
                             {
                                 "expression": {
                                     "expression": true,
-                                    "value": "$Id"
+                                    "value": "pipe.label+\".json\""
                                 },
                                 "targetPath": {
-                                    "value": "$Id"
+                                    "value": "$FileName"
                                 }
                             }
                         ]
@@ -370,7 +415,7 @@
             }
         },
         "11111111-1111-1111-1111-000000000003": {
-            "class_id": "com-snaplogic-snaps-jms-jmsproducer",
+            "class_id": "com-snaplogic-snaps-binary-s3filewriter",
             "class_version": 1,
             "instance_id": "11111111-1111-1111-1111-000000000003",
             "property_map": {
@@ -390,7 +435,7 @@
                 },
                 "info": {
                     "label": {
-                        "value": "JMS Producer"
+                        "value": "S3 File Writer1"
                     },
                     "notes": {
                         "value": null
@@ -417,43 +462,49 @@
                     }
                 },
                 "settings": {
-                    "destination": {
-                        "expression": false,
-                        "value": "PDTestQueue"
+                    "acl": {
+                        "value": []
                     },
-                    "destinationType": {
-                        "value": "QUEUE"
+                    "bufferSize": {
+                        "value": 10
                     },
                     "executable_during_suggest": {
                         "value": false
                     },
                     "execution_mode": {
-                        "value": "Execute only"
+                        "value": "Validate & Execute"
                     },
-                    "messageProperties": {
-                        "value": [
-                            {
-                                "messagePropertyKey": {
-                                    "expression": false,
-                                    "value": "CustMsgId"
-                                },
-                                "messagePropertyValue": {
-                                    "expression": true,
-                                    "value": "$Id"
-                                }
-                            }
-                        ]
+                    "fileAction": {
+                        "value": "OVERWRITE"
                     },
-                    "messageType": {
-                        "value": "TEXT"
+                    "filename": {
+                        "expression": true,
+                        "value": "\"s3:///sltraining@s3.us-east-2.amazonaws.com/testing/\"+_JMSMessageId+\".json\""
                     },
-                    "retryIntervalMillis": {
-                        "value": 1000
+                    "maxUploadThread": {
+                        "value": 10
                     },
-                    "retryLimit": {
+                    "metadata": {
+                        "value": []
+                    },
+                    "retries": {
+                        "expression": false,
                         "value": 0
                     },
-                    "transactedSession": {
+                    "retryInterval": {
+                        "expression": false,
+                        "value": 1
+                    },
+                    "tags": {
+                        "value": []
+                    },
+                    "validate": {
+                        "value": false
+                    },
+                    "writeEmptyFile": {
+                        "value": false
+                    },
+                    "writeHeader": {
                         "value": false
                     }
                 },
